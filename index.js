@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const { init: initDB, Counter } = require("./db");
 
 const logger = morgan("tiny");
+const axios = require("axios");
 
 const app = express();
 app.use(express.urlencoded({ extended: false }));
@@ -47,6 +48,21 @@ app.get("/api/wx_openid", async (req, res) => {
   if (req.headers["x-wx-source"]) {
     res.send(req.headers["x-wx-openid"]);
   }
+});
+
+
+app.post("/api/axios", async (req, res) => {
+  res.send(req);
+
+  // let axres = await axios({
+  //   method: 'POST',
+  //   url: `/mission/siteSurvey/list`,
+  //   data: {
+  //     equals: { missionId: this.missionId },
+  //   },
+  // })
+
+  // res.send(axres);
 });
 
 const port = process.env.PORT || 80;
