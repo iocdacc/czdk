@@ -52,7 +52,7 @@ app.get("/api/wx_openid", async (req, res) => {
 
 
 app.post("/api/axios", async (req, res) => {
-  res.send(req);
+  res.send(JSON.stringify(req));
 
   // let axres = await axios({
   //   method: 'POST',
