@@ -7,4 +7,6 @@ app.use('/', createProxyMiddleware({
   changeOrigin: true
 }));
 
-app.listen(3000);
+const port = process.env.PORT || 80;
+
+app.listen(port);
