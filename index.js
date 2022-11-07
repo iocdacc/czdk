@@ -3,7 +3,7 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 const app = express();
 
 app.use('/arcgis', createProxyMiddleware({
-  target: 'http://175.6.136.216:6080/',
+  target: 'http://175.6.136.216:6080/arcgis',
   changeOrigin: true
 }));
 
